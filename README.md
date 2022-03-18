@@ -28,5 +28,3 @@ From a clean terminal, clone this repository, and then simply run the included [
 
 You will be prompted for your password twice -- once for the initial package installation, and once for running the included playbook with sudo permissions.
 
-<iframe id="video" width="560" height="315" src="https://vimeo.com/689731302" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-
