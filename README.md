@@ -1,4 +1,4 @@
-# WSL/Ubuntu - Basic Dev Environment
+# Ubuntu - Basic Dev Environment
 
 ## Description
 Created this to easily recreate a base environment in WSL (running Ubuntu) -- This could work for other distributions and/or non-WSL environments, but has not been tested.
