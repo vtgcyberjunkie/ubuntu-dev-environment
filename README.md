@@ -28,3 +28,5 @@ From a clean terminal, clone this repository, and then simply run the included [
 
 You will be prompted for your password twice -- once for the initial package installation, and once for running the included playbook with sudo permissions.
 
+![Demo](./demo.gif)
+
