@@ -16,6 +16,8 @@ In summary, this project performs the following actions:
   * [tfsec](https://github.com/aquasecurity/tfsec)
   * [checkov](https://www.checkov.io/)
   * [nvm](https://github.com/nvm-sh/nvm)
+  * [virtualenv](https://formulae.brew.sh/formula/virtualenv)
+  * [virtualenvwrapper](https://formulae.brew.sh/formula/virtualenvwrapper)
 
 ## Requirements
 ```
