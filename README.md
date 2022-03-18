@@ -26,7 +26,7 @@ In summary, this project performs the following actions:
 ```
 
 ## Installation
-From a clean terminal, clone this repository, and then simply run the included [bootstrap.sh](./bootstrap.sh) script. 
+From a clean terminal, clone this repository, and then simply run the included [bootstrap.sh](./bootstrap.sh) script.
 
 You will be prompted for your password twice -- once for the initial package installation, and once for running the included playbook with sudo permissions.
 
