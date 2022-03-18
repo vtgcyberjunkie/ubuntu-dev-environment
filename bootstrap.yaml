@@ -1,0 +1,26 @@
+---
+- name: Bootstrap WSL2 work environment
+  hosts: localhost
+  connection: local
+  vars:
+    var_antigen_users:
+      - username: "{{ my_username | default(lookup('env','USER')) }}"
+        antigen_libraries:
+          - name: oh-my-zsh
+        antigen_theme:
+          name: bureau
+        antigen_bundles:
+          # Bundles from the default repo (robbyrussell's oh-my-zsh).
+          - name: git
+          - name: heroku
+          - name: pip
+          - name: lein
+          - name: command-not-found
+          # Syntax highlighting bundle.
+          - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
+            url: zsh-users/zsh-syntax-highlighting
+  tasks:
+  - name: Include antigen/main.yaml
+    include: ./tasks/antigen/main.yaml
+  - name: Include homebrew/main.yaml
+    include: ./tasks/homebrew/main.yaml

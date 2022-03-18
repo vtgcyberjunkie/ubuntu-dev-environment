@@ -1,0 +1,25 @@
+---
+- include_role:
+    name: gantsign.antigen
+  vars:
+    users: "{{ var_antigen_users }}"
+
+- name: Create local .env.d directory if missing
+  ansible.builtin.file:
+    path: "{{ lookup('env','HOME') }}/.env.d"
+    state: directory
+
+- name: Ensure line in zshrc to source local .env.d directory
+  ansible.builtin.lineinfile:
+    path: "{{ lookup('env','HOME') }}/.zshrc"
+    line: "for env in ~/.env.d/*.sh; do source $env; done"
+    create: yes
+
+- name: Populate local .env.d directory
+  ansible.builtin.template:
+    src: "./templates/env.d/{{ item.name }}.j2"
+    dest: "{{ lookup('env','HOME') }}/.env.d/{{ item.name }}"
+    mode: 0700
+  loop:
+  - name: wsl.sh
+  - name: alias.sh

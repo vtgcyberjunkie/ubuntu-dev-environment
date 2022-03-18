@@ -1,0 +1,24 @@
+---
+- name: Ensure required packages are installed for homebrew
+  package:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - build-essential
+    - procps
+    - curl
+    - file
+    - git
+  become: yes
+
+- name: Install homebrew silently
+  shell:  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+- name: Install required brew packages
+  shell: "/home/linuxbrew/.linuxbrew/bin/brew install {{ item }}"
+  loop: "{{ var_homebrew_packages }}"
+
+- name: create ~/.nvm directory
+  file:
+    path: "{{ lookup('env','HOME') }}/.nvm"
+    state: directory
