@@ -3,6 +3,14 @@
   hosts: localhost
   connection: local
   vars:
+    var_homebrew_packages:
+      - ansible
+      - warrensbox/tap/tfswitch
+      - tflint
+      - pre-commit
+      - tfsec
+      - checkov
+      - nvm
     var_antigen_users:
       - username: "{{ my_username | default(lookup('env','USER')) }}"
         antigen_libraries:
