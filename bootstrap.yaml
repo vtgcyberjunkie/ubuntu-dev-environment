@@ -11,6 +11,8 @@
       - tfsec
       - checkov
       - nvm
+      - virtualenv
+      - virtualenvwrapper
     var_antigen_users:
       - username: "{{ my_username | default(lookup('env','USER')) }}"
         antigen_libraries:
