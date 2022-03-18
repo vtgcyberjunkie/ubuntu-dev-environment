@@ -1,5 +1,5 @@
 ---
-- name: Bootstrap WSL2 work environment
+- name: Bootstrap all the things
   hosts: localhost
   connection: local
   vars:
